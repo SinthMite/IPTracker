@@ -8,9 +8,9 @@ const form = document.getElementById('form')
 
 const ipifyApiKey = "at_5IepPIB7u7nrYOPxHuFBP5y9Jmttn";
 let map;
-const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyApiKey}&ipAddress=${text.value}`;
 async function getData() {
   try {
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyApiKey}&ipAddress=${text.value}`;
     const response = await fetch(url);
     const data = await response.json();
     console.log(text.value)
