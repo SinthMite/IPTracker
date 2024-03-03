@@ -35,7 +35,7 @@ async function mapped(event) { // Pass data as a parameter
 
     map = L.map('map').setView([lat, lng], 13);
     L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
-      maxZoom: 10,
+      maxZoom: 20,
       subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
     }).addTo(map);
 
