@@ -8,9 +8,42 @@ const form = document.getElementById('form')
 
 const ipifyApiKey = "at_5IepPIB7u7nrYOPxHuFBP5y9Jmttn";
 let map;
+
+  async function user(){
+      const key = '1597bda9e8e74299a254fc993f1493d0'
+
+
+    const successCallback = async (position)=>{
+      const openApUrl = `https://api.opencagedata.com/geocode/v1/json?q=${position.coords.latitude}%2C${position.coords.longitude}&key=${key}`
+
+      console.log(position)
+
+      const response = await fetch(openApUrl);
+      const data = await response.json();
+      console.log(data);
+      if(!map){
+        map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
+          .bindPopup('Your Location')
+          .openPopup();
+          ipAddressElement.innerHTML =(`Not Searched`);
+          locationElement.innerHTML = (`${data.results[0].formatted}`);
+          timezoneElement.innerHTML = (`Not Searched`)
+          ispElement.innerHTML = (`Not Searched`)
+      } 
+    };
+    const errorCallback = (error) =>{
+      console.error(error)
+    }
+    navigator.geolocation.watchPosition(successCallback, errorCallback)
+
+  }
+  user()
 async function getData() {
   try {
     const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyApiKey}&ipAddress=${text.value}`;
+
     const response = await fetch(url);
     const data = await response.json();
     console.log(text.value)
