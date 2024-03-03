@@ -36,7 +36,7 @@ form input[type="submit"]{
     aspect-ratio: 1;
     border-radius: 0rem 1rem 1rem 0rem;
     border: none;
-    background-image: url('./images/icon-arrow.svg');
+    background-image: url('../images/icon-arrow.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-color: black;
@@ -73,7 +73,7 @@ form input[type="submit"]{
 }
 @media  screen and (min-width:426px) {
     #searchSection{
-        background-image: url('./images/pattern-bg-desktop.png');
+        background-image: url('../images/pattern-bg-desktop.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -82,7 +82,7 @@ form input[type="submit"]{
 
 @media  screen and (max-width:425px) {
     #searchSection{
-        background-image: url('./images/pattern-bg-mobile.png');
+        background-image: url('../images/pattern-bg-mobile.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
