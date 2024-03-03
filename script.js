@@ -29,7 +29,7 @@ let map;
           .openPopup();
           ipAddressElement.innerHTML =(`Not Searched`);
           locationElement.innerHTML = (`${data.results[0].formatted}`);
-          timezoneElement.innerHTML = (`Not Searched`)
+          timezoneElement.innerHTML = (`${data.results[0].annotations.timezone.short_name} ${data.results[0].annotations.timezone.offset_string}`)
           ispElement.innerHTML = (`Not Searched`)
       } 
     };
